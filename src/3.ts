@@ -29,11 +29,22 @@ class Wizard implements ICharacter, ISpellCaster {
   }
 }
 
+interface ICharacter {
+  name: string;
+  level: number;
+  introduce(phrase: string): void;
+  levelUp(): void;
+}
+
+interface ISpellCaster {
+  castSpell(): void;
+}
+
 // тестування класу
 const wizard = new Wizard('Merlin', 15);
 
 wizard.introduce('I am the mighty wizard');
 wizard.castSpell();
-wizard.levelUp();  // Level up! New level is 16
+wizard.levelUp(); // Level up! New level is 16
 
 export {};
